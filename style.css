@@ -53,7 +53,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 margin-top: -50px;}
 .malar{
     width: 300px;    
-    height: auto;    
+    height: 200px;    
     border-radius: 20%;
 }
 .name {    max-width: 600px;
@@ -97,7 +97,7 @@ margin-top: -50px;}
    color: #faf6f6;
 padding-bottom: 130px;}
 
-.container{padding-bottom: -150px;
+.container{
     margin-top: 60px;}
 .card {margin: 20px;
     padding: 20px;
@@ -164,7 +164,7 @@ footer {background: rgb(9, 3, 70);
     align-items: center;
     padding-left: 500px;
 padding-top: -55px;
-padding-bottom: -55px;}
+}
 .footer-rights {font-size: 0.9rem;}
 .footer-links ul {display: flex;
     list-style-type: none;
