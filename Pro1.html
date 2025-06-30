@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capacitive Touch-Controlled LED & Buzzer | Arduino Uno</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- FontAwesome for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+  /* Custom cursor */
+  body, a, button {
+    cursor: url('https://cdn-icons-png.flaticon.com/512/32/32441.png'), auto;
+  }
+
+  /* Container styling */
+  .container {
+    max-width: 900px;
+    margin-top: 50px;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Background & text */
+  body {
+    background: #121212;
+  }
+
+  h1, h2 {
+    color: #ff6600;
+  }
+
+  /* Hover effect on links and headings */
+  h1:hover, h2:hover, a:hover {
+    color: #ffaa00;
+    text-shadow: 0 0 10px #ffaa00;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  /* Code block styling */
+  pre {
+    background: #222;
+    border-radius: 8px;
+    padding: 15px;
+    overflow-x: auto;
+    color: #9cdcfe;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px #ff6600aa;
+  }
+
+  /* Button with glow and bounce on hover */
+  .btn-glow {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #ff6600aa;
+    transition: box-shadow 0.3s ease;
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 20px #ffaa00, 0 0 30px #ffaa00;
+    animation: bounce 0.5s ease;
+  }
+
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Video styling */
+  video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ff6600cc;
+  }
+
+  /* Hover effect for list items */
+  ul li:hover {
+    color: #ffaa00;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Capacitive Touch-Controlled LED and Buzzer using Arduino Uno</h1>
+
+  <h2>Summary</h2>
+  <p>
+    This project demonstrates the use of a TTP226 8-channel capacitive touch sensor interfaced with an Arduino Uno to control an LED and a buzzer.
+    When a user touches a key (K1–K8), the system responds by blinking the LED and beeping the buzzer <em>N</em> times, where <em>N</em> corresponds to the key number.
+    This project showcases embedded system control using touch input, digital outputs, and real-time feedback.
+  </p>
+
+  <h2>Objectives</h2>
+  <ul>
+    <li>To detect capacitive touch inputs using the TTP226 module.</li>
+    <li>To respond with audio-visual feedback (LED and buzzer) based on input.</li>
+    <li>To implement a real-time, repeatable interaction system using Arduino.</li>
+  </ul>
+
+  <h2>Bill of Materials</h2>
+  <table class="table table-dark table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Quantity</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Arduino Uno</td><td>1</td><td>Microcontroller board</td></tr>
+      <tr><td>TTP226 8-Key Capacitive Touch Module</td><td>1</td><td>Independent key output mode</td></tr>
+      <tr><td>LED (any color)</td><td>1</td><td>Output indicator</td></tr>
+      <tr><td>220Ω Resistor</td><td>1</td><td>For current-limiting LED</td></tr>
+      <tr><td>Active Buzzer</td><td>1</td><td>For beep feedback</td></tr>
+      <tr><td>Jumper Wires</td><td>~15</td><td>Male-to-male</td></tr>
+      <tr><td>Breadboard</td><td>1</td><td>For prototyping</td></tr>
+      <tr><td>USB Cable</td><td>1</td><td>For Arduino programming/power</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pin Connections</h2>
+  <h5>TTP226 to Arduino Uno:</h5>
+  <table class="table table-dark table-bordered">
+    <thead>
+      <tr><th>TTP226 Pin</th><th>Function</th><th>Arduino Pin</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>K1–K8</td><td>Touch Outputs</td><td>D2 to D9</td></tr>
+      <tr><td>VCC</td><td>Power</td><td>5V</td></tr>
+      <tr><td>GND</td><td>Ground</td><td>GND</td></tr>
+    </tbody>
+  </table>
+
+  <h5>Output Devices:</h5>
+  <table class="table table-dark table-bordered mb-4">
+    <thead>
+      <tr><th>Device</th><th>Arduino Pin</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>LED</td><td>D10</td><td>Via 220Ω resistor</td></tr>
+      <tr><td>Buzzer</td><td>D11</td><td>Active buzzer recommended</td></tr>
+    </tbody>
+  </table>
+
+  <h2>System Logic</h2>
+  <ul>
+    <li>The TTP226 sensor provides active LOW outputs when keys are touched.</li>
+    <li>Arduino reads the key states using digital pins.</li>
+    <li>When a new touch is detected (transition from HIGH to LOW), the Arduino:</li>
+    <ul>
+      <li>Blinks the LED.</li>
+      <li>Beeps the buzzer.</li>
+      <li>Repeats this action equal to the number corresponding to the touched key (1 to 8).</li>
+    </ul>
+    <li>The system supports repeated triggering, even for the same key, by tracking the previous key state.</li>
+  </ul>
+
+  <h2>Arduino Code</h2>
+  <pre>
+int keys[] = {2, 3, 4, 5, 6, 7, 8, 9}; // K1–K8
+const int NUM_KEYS = 8;
+
+#define LED_PIN 10
+#define BUZZER_PIN 11
+
+bool previousState[NUM_KEYS]; // Track key status
+
+void setup() {
+  Serial.begin(9600);
+  for (int i = 0; i < NUM_KEYS; i++) {
+    pinMode(keys[i], INPUT);
+    previousState[i] = HIGH;
+  }
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+}
+
+void loop() {
+  for (int i = 0; i < NUM_KEYS; i++) {
+    bool currentState = digitalRead(keys[i]);
+    if (previousState[i] == HIGH && currentState == LOW) {
+      int count = i + 1;
+      Serial.print("Key "); Serial.print(count); Serial.println(" touched");
+
+      for (int j = 0; j < count; j++) {
+        digitalWrite(LED_PIN, HIGH);
+        digitalWrite(BUZZER_PIN, HIGH);
+        delay(200);
+        digitalWrite(LED_PIN, LOW);
+        digitalWrite(BUZZER_PIN, LOW);
+        delay(200);
+      }
+      delay(200); // Debounce
+    }
+    previousState[i] = currentState;
+  }
+}
+  </pre>
+
+  <h2>Testing & Results</h2>
+  <ul>
+    <li>Touch Key 1: LED blinks and buzzer beeps once.</li>
+    <li>Touch Key 5: LED and buzzer activate 5 times.</li>
+    <li>Same key touched again: Response repeats — ensuring full interactivity.</li>
+    <li>The system reacts consistently and without error for all 8 keys.</li>
+  </ul>
+
+  <h2>📸 Photos / Evidence</h2>
+  <video controls>
+    <source src="8 Way touch.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="text-center mt-4">
+    <a href="index.html" class="btn btn-glow"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
+</div>
+
+<!-- Optional Bootstrap JS & dependencies (Popper.js and jQuery) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robotic Arm Assignment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #050505);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    video {
+      cursor: default;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .robotic-arm {
+      padding: 40px 10%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 25px;
+    }
+
+    h4 {
+      font-weight: 400;
+      line-height: 1.7;
+      color: #d0f9ff;
+      margin-bottom: 15px;
+    }
+
+    .robotic-arm img {
+      display: block;
+      margin: 30px auto;
+      max-width: 50%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+
+    .robotic-arm video {
+      display: block;
+      margin: 30px auto;
+      max-width: 60%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Robotic Arm Content -->
+  <div class="robotic-arm">
+    <h1>Robotic Arm Assignment</h1>
+
+    <h2>Introduction</h2>
+    <h4>
+      This project explores the conceptualization, design, and simulation of a robotic arm using Fusion 360. The aim is to understand mechanical linkages, rotational joints, actuator positioning, and movement simulation. The robotic arm is designed for basic pick-and-place functionality with rotational joints representing the shoulder, elbow, and gripper.
+    </h4>
+
+    <h2>Step-by-Step Guide to Creating the Robotic Arm</h2>
+
+    <h3>1. Start with a Base Plate</h3>
+    <h4>
+      Begin by designing a sturdy rectangular base in Fusion 360. This plate will support the entire structure and house the base servo motor. Use the sketch tool to create a 120mm × 100mm base and extrude it to 5mm. Optionally, add holes for mounting the arm or electronics.
+    </h4>
+
+    <h3>2. Design the Arm Segments</h3>
+    <h4>
+      Sketch the first arm segment as a rectangular bar (20mm wide, 80mm long) and extrude it to 5mm. Create multiple such segments representing the upper arm, forearm, and gripper holder. These will later be assembled to form the full structure.
+    </h4>
+
+    <h3>3. Add Joints and Actuators</h3>
+    <h4>
+      Insert revolute joints between segments to simulate movement. Position servo motor placeholders at the joints (especially shoulder and elbow). Define rotation limits to replicate physical constraints. For the gripper, simulate a claw or use a simple block with vertical motion.
+    </h4>
+
+    <h3>4. Assemble the Robotic Arm</h3>
+    <h4>
+      Move to the Assembly workspace. Use the Joint command to connect arm segments to the base and to one another. Carefully align all the axes so that the arm moves realistically. Test the motion of each part using the 'Animate Joint' feature.
+    </h4>
+
+    <h3>5. Testing and Simulation</h3>
+    <h4>
+      Use Fusion 360's animation or motion study tools to simulate the movement path. Validate the reach, flexibility, and collision-free motion of the arm. This step ensures the model works before real-world prototyping.
+    </h4>
+
+    <h2>Challenges and Solutions</h2>
+
+    <h3>Misalignment of Joints</h3>
+    <h4>
+      Misaligned components often break motion simulation. Use precise sketch constraints and reference planes to align each joint. When necessary, use the 'As-Built Joint' tool.
+    </h4>
+
+    <h3>Restricted Range of Motion</h3>
+    <h4>
+      Define custom motion limits (e.g., 0–180°) to prevent unnatural movement. This helps during both simulation and real-world actuator setup.
+    </h4>
+
+    <h3>Simulation Errors</h3>
+    <h4>
+      Always assign rigid groups to segments that should move together. Unresolved degrees of freedom may cause Fusion to display errors during simulation.
+    </h4>
+
+    <h2>Final Output: Robotic Arm Simulation</h2>
+
+    <video controls>
+      <source src="/assets/Video/ARM.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>Conclusion</h2>
+    <h4>
+      Designing a robotic arm in Fusion 360 deepened my understanding of mechanical linkages, actuator placement, and joint configuration. This assignment bridges theory with virtual simulation, offering a platform to test robotic concepts before physical prototyping. It also prepares me for future tasks involving automation, pick-and-place operations, and mechatronic design.
+    </h4>
+  </div>
+
+</body>
+</html>

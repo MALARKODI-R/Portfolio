@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      cursor: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      color: #00ffff;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      margin: 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .contact-icons a {
+      color: #ff4b3e;
+      font-size: 100px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      color: #00ffff;
+      transform: scale(1.2);
+    }
+
+    #custom-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #ff4500 0%, #ffdd00 60%, transparent 100%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      transition: transform 0.05s ease;
+      box-shadow: 0 0 6px #ff4500, 0 0 12px #ffdd00;
+    }
+  </style>
+</head>
+<body>
+  <div id="custom-cursor"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-info">
+    <h2><b>Contact Me</b></h2>
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/malarkodi05" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:malarkodi3.3@protosem.tech"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+919677487574"><i class="fas fa-phone"></i></a>
+      <a href="https://www.instagram.com/malarkodi520?igsh=c2c5YWtheTNlajlx" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const customCursor = document.getElementById("custom-cursor");
+      customCursor.style.left = `${e.clientX}px`;
+      customCursor.style.top = `${e.clientY}px`;
+    });
+  </script>
+</body>
+</html>

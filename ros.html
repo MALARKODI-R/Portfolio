@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ROS 2 & Gazebo Robot Simulation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #050505);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .ros-content {
+      padding: 30px 8%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin: 15px 0 10px;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    h4, p {
+      font-weight: 400;
+      line-height: 1.6;
+      color: #d0f9ff;
+      margin-bottom: 8px;
+    }
+
+    pre {
+      background-color: #1a1a1a;
+      color: #00ffcc;
+      padding: 12px;
+      overflow-x: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .ros-content video {
+      display: block;
+      margin: 20px auto;
+      max-width: 65%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="ros-content">
+    <h1>ROS 2 & Gazebo Robot Simulation</h1>
+
+    <h2>1. Robot Design in Fusion 360</h2>
+    <h4>Components:</h4>
+    <p>Main chassis, two side wheels (for movement), two caster wheels (for stability)</p>
+    <h4>Orientation:</h4>
+    <p>X-axis → Forward, Y-axis → Left, Z-axis → Up</p>
+    <h4>Export:</h4>
+    <p>Export each part (.STL or .STEP) with correct orientation for URDF compatibility.</p>
+
+    <h2>2. Setting Up the ROS 2 Workspace</h2>
+    <pre>mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_cmake &lt;robot_description_package&gt;</pre>
+    <pre>cd ~/ros2_ws
+colcon build
+source install/setup.bash</pre>
+
+    <h2>3. Create URDF Files Using Xacro</h2>
+    <p>Xacro improves modularity and simplifies URDF syntax.</p>
+    <p>File: <b>robot_name.urdf.xacro</b> inside <code>urdf/</code> folder.</p>
+
+    <h2>4. URDF Structure</h2>
+    <pre>&lt;link name="base_link"&gt;
+  &lt;visual&gt;...&lt;/visual&gt;
+  &lt;collision&gt;...&lt;/collision&gt;
+  &lt;inertial&gt;...&lt;/inertial&gt;
+&lt;/link&gt;</pre>
+
+    <h3>Wheel Joints</h3>
+    <pre>&lt;joint name="left_wheel_joint" type="continuous"&gt;
+  &lt;parent link="base_link"/&gt;
+  &lt;child link="left_wheel"/&gt;
+  &lt;origin xyz="0 0.175 0" rpy="0 0 0"/&gt;
+  &lt;axis xyz="0 0 1"/&gt;
+&lt;/joint&gt;</pre>
+
+    <h2>5. Launch in RViz</h2>
+    <p>Create a file <code>rsp.launch.py</code> with:</p>
+    <pre>Node(
+  package='robot_state_publisher',
+  executable='robot_state_publisher',
+  parameters=[{
+    'robot_description': Command([
+      'xacro ',
+      PathJoinSubstitution([
+        FindPackageShare('your_package'),
+        'urdf',
+        'robot.urdf.xacro'
+      ])
+    ])
+  }]
+)</pre>
+
+    <pre>ros2 launch &lt;your_package&gt; rsp.launch.py</pre>
+
+    <h2>6. Gazebo Simulation Setup</h2>
+    <p>Package Structure:</p>
+    <pre>my_lidar_description/
+├── launch/
+├── meshes/
+├── urdf/
+├── CMakeLists.txt
+└── package.xml</pre>
+
+    <h3>gazebo.launch.py</h3>
+    <pre>Node(
+  package='gazebo_ros',
+  executable='spawn_entity.py',
+  arguments=['-entity', 'lidar_bot', '-topic', 'robot_description']
+)</pre>
+
+    <h3>spawn_entity.py (Custom)</h3>
+    <pre>client = node.create_client(SpawnEntity, '/spawn_entity')
+request.xml = open('lidar.xacro').read()
+request.name = 'lidar_bot'</pre>
+
+    <pre>chmod +x ~/ros2_ws/src/my_lidar_description/launch/spawn_entity.py</pre>
+
+    <h2>7. Launching</h2>
+    <pre>colcon build
+source install/setup.bash
+ros2 launch gazebo_ros gazebo.launch.py</pre>
+
+    <h3>Spawn Manually</h3>
+    <pre>ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity lidar_bot -z 1</pre>
+
+    <h2>8. Errors and Fixes</h2>
+    <h4>🔸 Entity Already Exists</h4>
+    <p>Use different entity name like <code>lidar_bot_2</code>.</p>
+
+    <h4>🔸 Robot Not Visible</h4>
+    <p>Ensure correct mesh paths and origin positions. Use <code>-z 1</code>.</p>
+
+    <h4>🔸 Robot Doesn’t Spawn Automatically</h4>
+    <p>Check if <code>spawn_entity</code> node is included in launch file or spawn manually.</p>
+
+    <h2>Conclusion</h2>
+    <p>Robot components successfully listed in Gazebo. Visual issues were linked to mesh path or material errors. Ensuring proper URDF structure and origin/scaling fixed most issues.</p>
+
+    <h2>Demonstration Videos</h2>
+    <video controls>
+      <source src="/assets/Video/ros.mp4" type="video/mp4">
+    </video>
+    <h2>Conclusion</h2>
+<h4>
+  Through this assignment, I gained valuable experience in the end-to-end process of robot simulation using <b>Fusion 360</b>, <b>URDF/Xacro</b>, <b>ROS 2</b>, and <b>Gazebo</b>. I learned how to model a robot from scratch, define its joints and links with precision, and simulate it in a virtual world while observing realistic physical behaviors. This project deepened my understanding of ROS concepts like robot state publishing, transforms, and entity spawning. Despite initial challenges with mesh paths and robot visibility in Gazebo, I was able to debug and successfully spawn and simulate my robot. Overall, this hands-on experience strengthened my skills in mechanical modeling, robotics middleware, and simulation – key competencies for real-world autonomous systems development.
+</h4>
+  </div>
+
+</body>
+</html>

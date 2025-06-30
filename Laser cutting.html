@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laser Cutting</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #050505);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .laser {
+      padding: 40px 10%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 25px;
+    }
+
+    h4 {
+      font-weight: 400;
+      line-height: 1.7;
+      color: #d0f9ff;
+      margin-bottom: 15px;
+    }
+
+    .small-img {
+      display: block;
+      margin: 30px auto;
+      max-width: 35%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="laser">
+    <h1>ASSIGNMENT - 1</h1>
+
+    <h2>Introduction</h2>
+    <h4>
+      The objective of this assignment is to design and fabricate a segmented 3D sphere in Fusion 360, extract 2D projections suitable for laser cutting, and finally assemble the segments into a spherical structure. This workflow integrates advanced 3D modeling techniques, precise 2D documentation, and physical fabrication strategies, offering a comprehensive experience from concept to physical model.
+    </h4>
+
+    <h2>Step-by-Step Guide to Creating the 3D Model</h2>
+
+    <h3>1. Start a New Design</h3>
+    <h4>Launch Fusion 360 and start with a new design...</h4>
+
+    <h3>2. Create the Sphere (Main Body)</h3>
+    <h4>Go to <b>Create → Sphere</b>, select the center plane...</h4>
+
+    <h3>3. Segment the Sphere</h3>
+    <h4>Use <b>Modify → Split Body</b>. Choose the sphere as the body...</h4>
+
+    <h3>4. Extract a Single Segment</h3>
+    <h4>Hide other segments and isolate one slice...</h4>
+
+    <h3>5. Mirror or Pattern the Segments</h3>
+    <h4>To maintain symmetry, use <b>Create → Mirror</b>...</h4>
+
+    <h3>6. Apply Thickness (if needed)</h3>
+    <h4>If the segment is a surface body, apply <b>Shell</b>...</h4>
+
+    <h3>7. Add Refinements</h3>
+    <h4>Use <b>Fillet</b> and <b>Chamfer</b> tools...</h4>
+
+    <img src="/assets/images/fusion.png" alt="Fusion 360 Sphere Design" class="small-img" />
+
+    <h2>Step-by-Step Guide to Creating a 2D Drawing with Dimensions</h2>
+
+    <h3>1. Open the Drawing Workspace</h3>
+    <h4>Go to <b>File → New Drawing → From Design</b>...</h4>
+
+    <h3>2. Place Orthographic Views</h3>
+    <h4>Add front, top, and right views...</h4>
+
+    <h3>3. Add Section and Detail Views</h3>
+    <h4>Use <b>Section View</b> to expose internal details...</h4>
+
+    <h3>4. Dimensioning the Drawing</h3>
+    <h4>Add critical dimensions like radius, slot width...</h4>
+
+    <h3>5. Save and Export as DXF</h3>
+    <h4>Click <b>File → Export → DXF</b>...</h4>
+
+    <img src="/assets/images/dxf.png" alt="DXF Export View" class="small-img" />
+
+    <h2>Fabrication & Final Output</h2>
+
+    <h3>During Laser Cutting</h3>
+    <img src="/assets/images/cutting.jpg" alt="During Laser Cutting" class="small-img" />
+
+    <h3>Assembly (Pasting Segments)</h3>
+    <img src="/assets/images/pasting.jpg" alt="Pasting Segments" class="small-img" />
+
+    <h3>Evaluation / Fit Check</h3>
+    <img src="/assets/images/evaluation.jpg" alt="Evaluation Stage" class="small-img" />
+
+    <h3>Final Product</h3>
+    <img src="/assets/images/final_product.jpg" alt="Final Output" class="small-img" />
+
+    <h2>Common Challenges and Solutions</h2>
+    <h4>
+      <b>🔹 Misalignment of Segments:</b> Use construction planes and origin axes...<br>
+      <b>🔹 DXF File Not Opening:</b> Export from a flat sketch only...<br>
+      <b>🔹 Incorrect Laser Cuts:</b> Check kerf and material thickness...<br>
+      <b>🔹 Fusion Rendering Issues:</b> Hide bodies to simplify...
+    </h4>
+
+    <h2>Conclusion</h2>
+    <h4>
+      This assignment demonstrates the complete pipeline of digital design to physical prototyping. By modeling a complex 3D object like a segmented sphere, creating precise 2D documentation, and fabricating using a laser cutter, learners gain hands-on experience with CAD tools, dimensioning practices, and real-world engineering production methods. This integration of skills prepares students for industrial design, product development, and digital fabrication workflows.
+    </h4>
+  </div>
+
+</body>
+</html>

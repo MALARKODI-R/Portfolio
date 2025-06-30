@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Think Like a Coder - Flowcharts & Algorithms</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #050505);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .content {
+      padding: 40px 10%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 30px;
+    }
+
+    h4 {
+      font-weight: 400;
+      line-height: 1.7;
+      color: #d0f9ff;
+      margin: 10px 0 20px;
+    }
+
+    .algo-block {
+      background-color: #111;
+      border: 1px solid #00ffff33;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    }
+
+    .algo-block:hover {
+      background-color: #1a1a1a;
+      transition: 0.3s;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: #00ffff;
+      background: transparent;
+      border: 2px solid #00ffff;
+      border-radius: 30px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .btn:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Think Like a Coder</h1>
+    <h2>Real-World Problems Solved with Algorithms & Flowcharts</h2>
+
+    <!-- Prison Break -->
+    <div class="algo-block">
+      <h3>1. The Prison Break</h3>
+      <h4><b>Algorithm:</b></h4>
+      <ul>
+        <li>Start</li>
+        <li>Check the dial colour</li>
+        <li>While the dial is not Green:
+          <ul>
+            <li>Spin the dial</li>
+            <li>Check the dial colour again</li>
+          </ul>
+        </li>
+        <li>Once the dial is Green: Open the door</li>
+        <li>Stop</li>
+      </ul>
+      <h4><b>Flowchart Summary:</b></h4>
+      <ul>
+        <li>Start → Check colour</li>
+        <li>While (Colour ≠ Green): Spin the dial</li>
+        <li>If Green: Open the door → Stop</li>
+      </ul>
+    </div>
+
+    <!-- Finding the Leader -->
+    <div class="algo-block">
+      <h3>2. Finding the Leader</h3>
+      <h4><b>Algorithm:</b></h4>
+      <ul>
+        <li>Start</li>
+        <li>Check if the person has green eyes
+          <ul>
+            <li>If no → Reject & check next person</li>
+            <li>If yes → Continue</li>
+          </ul>
+        </li>
+        <li>Check if the person has red hair
+          <ul>
+            <li>If yes → Check name: "XX"</li>
+            <li>If no → Continue</li>
+          </ul>
+        </li>
+        <li>Check if the person wears glasses
+          <ul>
+            <li>If yes → Check name has 2 vowels</li>
+            <li>If no → Check name has 3 vowels</li>
+          </ul>
+        </li>
+        <li>If all conditions met → Select the person</li>
+        <li>Stop</li>
+      </ul>
+      <h4><b>Flowchart Summary:</b></h4>
+      <ul>
+        <li>Start → Check for Green Eyes</li>
+        <li>→ Red Hair? → Check Name</li>
+        <li>→ Glasses? → 2 Vowels → Select</li>
+        <li>Else → 3 Vowels → Select</li>
+        <li>→ Stop</li>
+      </ul>
+    </div>
+
+    <!-- Furnace Bots -->
+    <div class="algo-block">
+      <h3>3. The Furnace Bots</h3>
+      <h4><b>Algorithm:</b></h4>
+      <ul>
+        <li>Start</li>
+        <li>Take a glance at all shell & furnace numbers</li>
+        <li>While furnace number ≠ 0:
+          <ul>
+            <li>Store the furnace number</li>
+            <li>Move to bot whose shell matches that number</li>
+          </ul>
+        </li>
+        <li>If furnace number is 0 → It’s the original bot</li>
+        <li>Stop</li>
+      </ul>
+      <h4><b>Flowchart Summary:</b></h4>
+      <ul>
+        <li>Start → Read Serial & Furnace Numbers</li>
+        <li>While Furnace ≠ 0 → Move to Bot</li>
+        <li>Furnace = 0 → Found → Stop</li>
+      </ul>
+    </div>
+
+    <!-- The Train Heist -->
+    <div class="algo-block">
+      <h3>4. The Train Heist</h3>
+      <h4><b>Algorithm:</b></h4>
+      <ul>
+        <li>Start</li>
+        <li>Initialize position = 0</li>
+        <li>While position ≠ 0:
+          <ul>
+            <li>If train moves right (→) → Decrement position</li>
+            <li>If train moves left (←) → Increment position</li>
+          </ul>
+        </li>
+        <li>When position = 0 → Press the button</li>
+        <li>Stop</li>
+      </ul>
+      <h4><b>Flowchart Summary:</b></h4>
+      <ul>
+        <li>Start → Position = 0</li>
+        <li>While (position ≠ 0): Check arrow direction</li>
+        <li>→ ← → Adjust position accordingly</li>
+        <li>Position = 0 → Press Button → Stop</li>
+      </ul>
+    </div>
+
+    <!-- Refer Button -->
+    <div style="text-align: center;">
+      <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:3b2316e8-d325-456d-a524-ae624892c30b"
+         class="btn learn-more-btn" target="_blank">
+        Refer Document
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>

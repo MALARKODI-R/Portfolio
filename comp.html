@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computational Hardware</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      cursor: default; /* Normal cursor */
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .section {
+      padding: 30px 20px;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #00ffff;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .content-image {
+      width: 500px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #00ffff55;
+    }
+
+    .small-image {
+      width: 350px;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .video-container video {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffff88;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTENT SECTIONS -->
+  <div class="section">
+    <h2>RFID-Based Access Control System</h2>
+    <img src="/assets/images/rfid.png" alt="RFID System" class="content-image small-image" />
+    <p>This computational hardware project is a real-time access control system using the ESP32 microcontroller. The system uses an RFID card for user identification and grants or denies access based on UID matching. It features a Real-Time Clock (RTC) module for timestamping, a servo motor to open/close the gate, an LCD to display status, and logs the access attempt in Google Sheets over Wi-Fi.</p>
+    <h4>Key Features:</h4>
+    <p>✔ RFID Card Scanning<br/>✔ Real-Time Clock Integration<br/>✔ Servo-Controlled Gate<br/>✔ Google Sheet Logging via Wi-Fi<br/>✔ LCD Feedback + Buzzer + LED Alerts</p>
+  </div>
+
+  <div class="section">
+    <h2>Hardware Setup</h2>
+    <img src="/assets/images/Hardwarest.png" alt="Hardware Setup" class="content-image" />
+    <p>Components include: ESP32-WROOM, MFRC522 RFID reader, DS1302 RTC module, SG90 Servo motor, LCD 16x2 with I2C, Buzzer, LED, and external 5V power for servo. All modules were interfaced using jumper wires on a breadboard. A CR2032 cell was used for RTC backup.</p>
+    <h4>Interface Pins:</h4>
+    <p>RFID → GPIO 5/18/23/19/4<br/>RTC → GPIO 14/27/26<br/>Servo → GPIO 13<br/>LCD (I2C) → SDA 21, SCL 22<br/>Buzzer → GPIO 15, LED → GPIO 2</p>
+  </div>
+
+  <div class="section">
+    <h2>System Workflow</h2>
+    <img src="/assets/images/googleint.png" alt="Flowchart" class="content-image" />
+    <p>1. User scans an RFID tag.<br/>2. UID is verified against known entries.<br/>3. Access is granted (servo opens gate) or denied.<br/>4. Time is read from the RTC module.<br/>5. UID, status, and timestamp are sent to Google Sheets using HTTP.<br/>6. LCD displays the result, and buzzer/LED give audible/visual feedback.</p>
+  </div>
+
+  <div class="section">
+    <h2>Google Sheets Integration</h2>
+    <img src="/assets/images/Liveapp.png" alt="Sheet Entry" class="content-image" />
+    <p>The ESP32 sends HTTP GET requests to a Google Apps Script Web App, logging UID, status (Granted/Denied), and timestamp. The script writes these to a Google Sheet live, creating an easy-to-access logbook for access monitoring.</p>
+    <h4>Example:</h4>
+    <p>✅ UID: 0xED:0D:0C:32<br/>📅 Date: 29/06/2025 11:21:30<br/>📄 Status: Access Granted</p>
+  </div>
+
+  <div class="section">
+    <h2>System Output</h2>
+    <img src="/assets/images/Deneid.png" alt="LCD Display" class="content-image" />
+    <p>The LCD clearly displays the scanned UID and whether access was granted or denied. The servo rotates to 180° upon successful access and returns to 0° after 3 seconds. Unauthorized cards trigger blinking LED and buzzer beeps.</p>
+  </div>
+
+  <div class="section">
+    <h2>Conclusion</h2>
+    <p>This system effectively demonstrates computational hardware integration with cloud computing. It blends electronics, IoT, and web technologies to create a secure, automated, and loggable access control system—ideal for institutional gates, smart homes, or attendance monitoring systems.</p>
+  </div>
+
+  <div class="section">
+    <h3>Final Working Video</h3>
+    <div class="video-container">
+      <video controls>
+        <source src="/assets/Video/rfidvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCB Design Assignment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #050505);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .pcb {
+      padding: 40px 10%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 25px;
+    }
+
+    h4 {
+      font-weight: 400;
+      line-height: 1.8;
+      color: #d0f9ff;
+      margin-bottom: 15px;
+    }
+
+    .pcb img, .pcb video {
+      display: block;
+      margin: 20px auto;
+      max-width: 60%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main PCB Content -->
+  <div class="pcb">
+    <h1>PCB Design and Fabrication Assignment</h1>
+
+    <h2>Introduction</h2>
+    <h4>
+      In this assignment, we explored how to design and fabricate a custom PCB using <b>KiCad</b> for schematic capture and PCB layout, and the <b>Wegstr</b> CNC milling machine for fabrication. The process covered schematic creation, footprint assignment, board layout, generation of Gerber and SVG files, and real-time PCB milling.
+    </h4>
+
+    <h2>1. Schematic Design in KiCad</h2>
+    <h4>
+      The process begins with designing the circuit in KiCad's <b>Eschema</b> environment. We placed electronic components like resistors, capacitors, microcontrollers, and connectors, and connected them logically using wires. Key steps included:
+      <ul>
+        <li>Creating a new project in KiCad</li>
+        <li>Placing symbols from standard libraries</li>
+        <li>Using labels and power ports</li>
+        <li>Annotating the schematic</li>
+        <li>Running ERC (Electrical Rules Check)</li>
+      </ul>
+    </h4>
+
+    <img src="/assets/images/sch.png" alt="schematic in KiCad">
+
+    <h2>2. Footprint Assignment and PCB Layout</h2>
+    <h4>
+      After completing the schematic, we assigned <b>footprints</b> to each component, choosing suitable SMD or through-hole packages. Then, we switched to the PCB Editor to:
+      <ul>
+        <li>Import netlist connections</li>
+        <li>Define board outline</li>
+        <li>Arrange components optimally</li>
+        <li>Route tracks for each connection</li>
+        <li>Apply design rules for clearances and track widths</li>
+      </ul>
+    </h4>
+
+    <img src="assets/images/pcb.png" alt="PCB Layout in KiCad">
+    <img src="assets/images/3d.png" alt="3d in KiCad">
+
+    <h2>3. Generating Gerber and SVG Files</h2>
+    <h4>
+      Once the layout was complete, we generated <b>Gerber files</b> using KiCad’s Plot tool. We also exported <b>SVG files</b> for use with the Wegstr machine. Important steps:
+      <ul>
+        <li>Set output layers: F.Cu, B.Cu, Edge.Cuts, Drill Files</li>
+        <li>Export SVG with only required layers enabled (like copper and cutout)</li>
+        <li>Ensure correct DPI and layer scaling</li>
+      </ul>
+    </h4>
+
+    <h2>4. PCB Milling Using Wegstr CNC Machine</h2>
+    <h4>
+      We used the <b>Wegstr machine</b> to mill our PCB by importing the SVG files into its software. Key procedures involved:
+      <ul>
+        <li>Mounting copper-clad board securely on the bed</li>
+        <li>Importing SVG and aligning tool paths</li>
+        <li>Selecting the correct tool bit (typically 0.1mm to 0.2mm)</li>
+        <li>Running the engraving and cutting processes</li>
+        <li>Post-processing with soldering and cleaning</li>
+      </ul>
+    </h4>
+
+    <img src="assets/images/weg.jpg" alt="Wegstr PCB Milling">
+    <img src="assets/images/cnc.jpg" alt="Wegstr PCB Milling">
+
+    <h2>Demo Video</h2>
+    <video controls>
+      <source src="/assets/Video/democnc.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>Challenges Faced</h2>
+    <h4>
+      <b>🔸 Track Widths:</b> Ensuring fine tracks did not merge during milling.<br>
+      <b>🔸 Component Footprints:</b> Matching real-world components with correct pad sizes.<br>
+      <b>🔸 Milling Issues:</b> Bit slipping or uneven copper removal due to poor clamping.<br>
+      <b>🔸 Toolpath Calibration:</b> SVG scaling had to be precise to prevent offset milling.
+    </h4>
+
+    <h2>Conclusion</h2>
+    <h4>
+      This assignment provided practical insights into the PCB design and manufacturing workflow. Using KiCad for schematic and layout design made it easy to visualize and correct circuit connections, while SVG export and Wegstr milling gave us hands-on experience in physical board creation. The process taught the importance of precision, design rules, and troubleshooting hardware fabrication challenges.
+    </h4>
+  </div>
+
+</body>
+</html>

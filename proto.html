@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuadR Prototype - Protosem 3.3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #050505);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      border-bottom: 2px solid #333;
+    }
+
+    .navbar-brand {
+      color: #00ffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .content {
+      padding: 40px 10%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.8;
+      color: #d0f9ff;
+      margin: 10px 0 20px;
+    }
+
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 30px 0;
+      justify-items: center;
+    }
+
+    .img-grid img,
+    .timeline-step .img-row img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .img-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    video {
+      display: block;
+      margin: 30px auto;
+      width: 20%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .timeline {
+      margin: 40px 0;
+    }
+
+    .timeline-step {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">MALARKODI R</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills and achievement.html">Skills & Achievement</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="ass.html">Protosem 3.3</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>QuadR - Quadruped Robot Prototype</h1>
+    <p>
+      QuadR is a modular, terrain-adaptive quadruped robot engineered for agricultural, research, and educational purposes. With articulated leg movement (hip, knee, ankle) and ROS integration, it offers superior mobility on uneven, muddy farm terrain. Built using lightweight 3D-printed parts and powered by LiPo batteries, it supports payload tools and joystick/manual or semi-autonomous operation.
+    </p>
+
+    <h2>7 Views of the Robot</h2>
+    <div class="img-grid">
+      <img src="assets/images/TOP_VIEW.png" alt="Top View">
+      <img src="assets/images/FRONT_VIEW.png" alt="Front View">
+      <img src="assets/images/LEFT_SIDE_VIEW.png" alt="Left Side View">
+      <img src="assets/images/RIGHT_SIDE_VIEW.png" alt="Right Side View">
+      <img src="assets/images/ISOMETRIC_VIEW.png" alt="Isometric View">
+      <img src="assets/images/BOTTOM_VIEW.png" alt="Bottom View">
+      <img src="assets/images/REAR_VIEW.png" alt="Rear View">
+    </div>
+
+    <h2>Fabrication & Actuation Process</h2>
+    <div class="timeline">
+      <div class="timeline-step">
+        <h3>Step 1: 3D Printing the Left Leg</h3>
+        <p>
+          Design and 3D print the left leg using PLA. Joints are modeled with clear DOF separations and assembled after printing.
+        </p>
+        <div class="img-row">
+          <img src="assets/images/3d1.jpeg" alt="Leg Print">
+          <img src="assets/images/3d2.jpeg" alt="Leg Print">
+          <img src="assets/images/3d3.png" alt="Leg Print">
+          <img src="assets/images/3dpart.png" alt="Left Leg Print">
+        </div>
+      </div>
+
+      <div class="timeline-step">
+        <h3>Step 2: Actuation via Nano & ROS</h3>
+        <p>
+          Using Arduino Nano and ROS Serial, servo signals were generated to move the joints. We validated response and smooth motion.
+        </p>
+        <video controls>
+          <source src="/assets/Video/1st leg.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="timeline-step">
+        <h3>Step 3: Two-Leg Gait Coordination</h3>
+        <p>
+          Added a second leg, synchronized via ROS. This marked the first coordinated gait cycle and ROS feedback control testing.
+        </p>
+        <video controls>
+          <source src="/assets/Video/2nd leg.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <h2>Description of the Invention</h2>
+    <p>
+      Agriculture is vital to India, yet many farmers lack access to affordable automation. Our quadruped robot tackles issues like labor shortages, terrain difficulty, and crop disturbance. Its legged design ensures adaptability to narrow rows, muddy fields, and irregular plots. The platform is modular, AI-ready, and low-cost.
+    </p>
+
+    <h2>Technical Overview</h2>
+    <ul>
+      <li><b>Mobility:</b> 4 articulated legs (3 DOF per leg) for walking, squatting, turning.</li>
+      <li><b>Control:</b> Arduino + ROS 2 with joystick or semi-autonomous mode.</li>
+      <li><b>Modularity:</b> Attach sprayer, weeder, camera, etc.</li>
+      <li><b>Construction:</b> Lightweight 3D-printed ABS/PLA frame.</li>
+      <li><b>Power:</b> 3S/4S LiPo Battery – 1–2 hours run time.</li>
+      <li><b>Communication:</b> Serial and Wi-Fi protocols.</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <ul>
+      <li><b>Agriculture:</b> Weeding, spraying, crop monitoring.</li>
+      <li><b>Education:</b> ROS 2 learning, mechatronics, gait training.</li>
+      <li><b>Research:</b> Sensor fusion, AI vision, terrain simulation.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+      Team QuadR envisions this system to empower small farmers with affordable robotics while enabling students and researchers to explore cutting-edge robotics. The quadruped's rugged adaptability, open-source architecture, and modular design make it a promising platform for the future of Indian agriculture and education.
+    </p>
+  </div>
+
+</body>
+</html>

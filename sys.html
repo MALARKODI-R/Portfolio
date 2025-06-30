@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Thinking - Reverse Engineering of a Wireless Mouse</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #111, #1a1a1a);
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px 10%;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #1fe2e2;
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    img {
+      display: block;
+      margin: 15px auto;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>System Thinking</h1>
+  <h2>Reverse Engineering a Wireless Mouse</h2>
+
+  <p>In this session, we explored the concept of system thinking by applying reverse engineering techniques to dismantle and analyze a wireless mouse. This allowed us to understand how different subsystems interact to achieve overall functionality. Each component was carefully studied for its role in the design and operation of the mouse.</p>
+
+  <h3>1. Dismantled Parts</h3>
+  <p>We started by carefully opening the wireless mouse and laying out all individual parts. This gave us an overview of the internal architecture and helped us identify each component for detailed study.</p>
+  <img src="assets/images/1st.png" alt="Dismantled Wireless Mouse">
+
+  <h3>2. Frame</h3>
+  <p>The outer frame houses all the internal components. It's ergonomically shaped for comfortable grip and protects the internal circuit from dust and damage.</p>
+  <img src="assets/images/frame.png" alt="Mouse Frame">
+
+  <h3>3. Buttons</h3>
+  <p>The left and right click buttons are mechanically linked to the internal push buttons. They are designed for durability and responsiveness.</p>
+  <img src="assets/images/button.png" alt="Mouse Buttons">
+
+  <h3>4. Push Buttons</h3>
+  <p>These are the actual electronic switches that register clicks. They are soldered onto the PCB and activate when the top buttons are pressed.</p>
+  <img src="assets/images/push.png" alt="Push Buttons">
+
+  <h3>5. DPI Switch</h3>
+  <p>The DPI (Dots Per Inch) switch allows users to change the mouse sensitivity. Internally, it sends signals to the microcontroller to adjust tracking resolution.</p>
+  <img src="assets/images/dpi.png" alt="DPI Switch">
+
+  <h3>6. Scroll Wheel</h3>
+  <p>The scroll wheel includes a mechanical roller and an optical encoder. It allows smooth vertical navigation through software interfaces.</p>
+  <img src="assets/images/scrool.png" alt="Scroll Wheel">
+
+  <h3>7. Main Board</h3>
+  <p>The printed circuit board (PCB) contains the microcontroller, switches, optical sensor, and battery terminals. It is the heart of the mouse where signals are processed and transmitted.</p>
+  <img src="assets/images/board.png" alt="Main Board">
+
+  <h3>8. Mechanism</h3>
+  <p>Various mechanical structures inside the mouse help in converting user input into electronic signals, including button plungers, springs, and the wheel encoder.</p>
+  <img src="assets/images/mechanis.png" alt="Mouse Internal Mechanism">
+
+  <h3>9. Wireless Communication</h3>
+  <p>The mouse includes a 2.4GHz RF module for communicating with a USB receiver. It transmits the processed signals from the microcontroller to the host computer.</p>
+  <img src="assets/images/comm.png" alt="Wireless Communication Module">
+
+  <h3>10. Other Components</h3>
+  <p>Other internal parts include resistors, capacitors, battery holders, and LEDs for power indication. All these contribute to stable operation and user interaction.</p>
+  <img src="assets/images/other.png" alt="Other Internal Components">
+
+  <h3>11. Attributes</h3>
+  <p>From this disassembly and analysis, we understood critical system thinking attributes such as modularity, signal flow, feedback loops, mechanical-electronic interface, and user ergonomics. It emphasized how complex systems are designed and integrated efficiently.</p>
+  <img src="assets/images/attri.png" alt="System Thinking Attributes">
+
+  <h2>Conclusion</h2>
+  <p>This session enabled us to approach technology not just as users but as system thinkers. Reverse engineering the wireless mouse helped us appreciate the interdependence of hardware and firmware in designing compact, efficient, and user-friendly devices. It strengthened our analytical skills and deepened our understanding of embedded systems.</p>
+
+</body>
+</html>
