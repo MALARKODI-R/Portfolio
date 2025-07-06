@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UI/UX Design Assignment</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #004080;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    nav.navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #000000;
+      padding: 10px 30px;
+    }
+
+    .navbar-brand {
+      color: #ffffff !important;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #ffffff !important;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+      font-size: 15px;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #13bff8 !important;
+    }
+
+    .page-title, h1, h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      color: #004080;
+      margin-top: 100px;
+    }
+
+    .content {
+      padding: 25px 6%;
+      font-size: 15px;
+    }
+
+    h3 {
+      color: #0066cc;
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    h4 {
+      font-weight: 400;
+      line-height: 1.6;
+      color: #004080;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    .ui-screens-row, .media-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .ui-screens-row img, .media-section img, .media-section video {
+      width: 20%;
+      min-width: 120px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .media-section img, .media-section video {
+      width: 60%;
+      min-width: 280px;
+    }
+
+    .ui-screens-row img:hover, .media-section img:hover, .media-section video:hover {
+      transform: scale(1.05);
+    }
+
+    /* Industrial Style Buttons */
+    .button-container {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+   .back-home {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 10px 25px;
+      background-color: transparent;
+      color: #004080;
+      border: 3px solid #004080;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-home:hover {
+      background-color: #004080;
+      color: #ffffff;
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      padding: 15px 0;
+      color: #004080;
+      text-align: center;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TECHNICAL SKILLS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills and achievement.html">Skills & Achievement</a></li>
+          <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="ass.html">Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+
+    <h2>UI/UX Design</h2>
+
+    <h3>1. Understanding UI vs UX</h3>
+    <h4>We began by understanding the difference between UI (User Interface) and UX (User Experience)...</h4>
+
+    <h3>2. Introduction to Figma</h3>
+    <h4>Figma was introduced as a cloud-based design tool. We learned how to:
+      <ul>
+        <li>Create frames for mobile and desktop devices</li>
+        <li>Draw shapes, add images, text, and icons</li>
+        <li>Use auto layout to create responsive designs</li>
+        <li>Collaborate with others in real-time</li>
+      </ul>
+    </h4>
+
+    <h3>3. Wireframing</h3>
+    <h4>Before jumping into full design, we created low-fidelity wireframes...</h4>
+
+    <h3>4. User Flow Mapping</h3>
+    <h4>We mapped out user journeys by connecting screens in a logical flow...</h4>
+
+    <h3>5. Prototyping</h3>
+    <h4>Using Figma’s prototyping features, we created interactive click-through prototypes...</h4>
+
+    <h3>6. Design Principles</h3>
+    <h4>We followed principles like:
+      <ul>
+        <li><b>Consistency</b> in design elements</li>
+        <li><b>Visual hierarchy</b> for better user focus</li>
+        <li><b>Accessibility</b> to ensure usability for all</li>
+      </ul>
+    </h4>
+
+    <h3>7. Real-time Collaboration</h3>
+    <h4>Figma’s collaboration tools allowed us to work together efficiently...</h4>
+
+    <h2>Final Project & Screens</h2>
+    <div class="ui-screens-row">
+      <img src="assets/images/ui1.png" alt="Screen 1">
+      <img src="assets/images/ui2.png" alt="Screen 2">
+      <img src="assets/images/ui3.png" alt="Screen 3">
+      <img src="assets/images/ui4.png" alt="Screen 4">
+    </div>
+
+    <h2>Hardware Wiring Integration</h2>
+    <div class="media-section">
+      <img src="/assets/images/wire1.png" alt="Wiring 1">
+      <img src="assets/images/wire2.png" alt="Wiring 2">
+      <img src="assets/images/wire3.png" alt="Wiring 3">
+      <img src="assets/images/wire4.png" alt="Wiring 4">
+    </div>
+
+    <h2>Final Demo Video</h2>
+    <div class="media-section">
+      <video controls>
+        <source src="./assets/video/figma_uiux_demo.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <h2>Challenges & Conclusion</h2>
+    <h4>We faced challenges with alignment, prototyping, and managing design consistency but overcame them through practice and teamwork.</h4>
+
+    <div class="button-container">
+      <a href="index.html" class="back-home">Back to Home</a>
+      <a href="ass.html" class="back-home">Back</a>
+      <a href="industrial.html" class="back-home">Top</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

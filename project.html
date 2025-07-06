@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #004080;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #000000;
+      padding: 10px 30px;
+    }
+
+    .navbar-brand {
+      color: #ffffff !important;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #ffffff !important;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #13bff8 !important;
+    }
+
+    .page-title {
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      color: #004080;
+      margin-top: 100px;
+    }
+
+    .tech {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+
+    .project-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      max-width: 380px;
+      text-align: center;
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #004080;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,64,128,0.3);
+    }
+
+    .project-card h2 {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #004080;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+    .back-home {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: transparent;
+      color: #004080;
+      border: 3px solid #004080;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-home:hover {
+      background-color: #004080;
+      color: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MALARKODI R</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills and achievement.html">Skills & Achievement</a></li>
+          <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="ass.html">Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-title">PROJECTS</div>
+
+  <div class="tech">
+    <div class="project-row">
+
+      <a href="https://docs.google.com/document/d/1w1Yq21hmpv1xNzI_cbphIaVPL2z77h4BMVt1PN9pqB4/edit?usp=sharing" target="_blank" style="text-decoration: none;">
+        <div class="project-card">
+          <img src="assets/images/rfid.png" alt="RFID Project">
+          <h2>RFID-Based Attendance System</h2>
+        </div>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1J9KK1hQNqEwdxfMhJlHk-EYbBlqRwGZfhI2HFBGLgvM/edit?usp=sharing" target="_blank" style="text-decoration: none;">
+        <div class="project-card">
+          <img src="assets/images/ISOMETRIC_VIEW.png" alt="Quadruped Project">
+          <h2>Quadruped</h2>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="button-container">
+      <a href="index.html" class="back-home">Back to Home</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

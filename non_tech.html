@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Non-Technical Skills</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #004080;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #000000;
+      padding: 10px 30px;
+    }
+
+    .navbar-brand {
+      color: #ffffff !important;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #ffffff !important;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #13bff8 !important;
+    }
+
+    .page-title {
+      font-weight: bold;
+      font-size: 2rem;
+      text-align: center;
+      color: #004080;
+      margin-top: 100px;
+    }
+
+    .tech {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+
+    .skills-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .skill-box {
+      max-width: 320px;
+      text-align: center;
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .skill-box img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #004080;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-box img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,64,128,0.3);
+    }
+
+    .skill-box h4 {
+      margin-top: 15px;
+      color: #004080;
+      font-size: 1.1rem;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 10px 25px;
+      background-color: transparent;
+      color: #004080;
+      border: 3px solid #004080;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-home:hover {
+      background-color: #004080;
+      color: #ffffff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MALARKODI R</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills and achievement.html">Skills & Achievement</a></li>
+          <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="ass.html">Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-title">NON-TECHNICAL SKILLS</div>
+
+  <div class="tech">
+    <div class="skills-row">
+      <div class="skill-box">
+        <img src="./assets/images/creativity.jpg" alt="Teamwork">
+        <h4>Teamwork</h4>
+      </div>
+
+      <div class="skill-box">
+        <img src="./assets/images/drawing.jpg" alt="Drawing">
+        <h4>Drawing</h4>
+      </div>
+
+    <div class="skill-box">
+        <img src="./assets/images/time.jpg" alt="Drawing">
+        <h4>Time Management</h4>
+      </div>
+
+    <div class="skill-box">
+        <img src="./assets/images/adapt.webp" alt="Drawing">
+        <h4>Adaptability</h4>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-home">Back to Home</a>
+    <a href="skills and achievement.html" class="back-home">Back</a>
+  </div>
+
+</body>
+</html>

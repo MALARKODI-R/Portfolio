@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+
+  <!-- Bootstrap & Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #004080;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Exact Navbar Style from index.html */
+    nav.navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #000000;
+      padding: 10px 30px;
+    }
+
+    .navbar-brand {
+      color: #ffffff !important;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #ffffff !important;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #13bff8 !important;
+    }
+
+    .content {
+      padding-top: 100px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #004080;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .flip-card {
+      background: transparent;
+      width: 200px;
+      height: 260px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .flip-front {
+      background: #f0f0f0;
+      color: #004080;
+    }
+
+    .flip-front i {
+      font-size: 3.5rem;
+    }
+
+    .flip-front p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .flip-back {
+      background-color: #004080;
+      color: #ffffff;
+      transform: rotateY(180deg);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .flip-back a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .flip-back a:hover {
+      text-decoration: underline;
+    }
+
+    .button-container {
+      margin-top: 40px;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 25px;
+      background-color: transparent;
+      color: #004080;
+      border: 3px solid #004080;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-home:hover {
+      background-color: #004080;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Exact Same Navbar from index.html -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MALARKODI R</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills and achievement.html">Skills & Achievement</a></li>
+          <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="ass.html">Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Contact Section -->
+  <div class="content">
+    <h1>Contact Me</h1>
+
+    <div class="cards">
+      <!-- LinkedIn -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <i class="fab fa-linkedin"></i>
+            <p>LinkedIn</p>
+          </div>
+          <div class="flip-back">
+            <a href="https://www.linkedin.com/in/malarkodi05" target="_blank">Visit LinkedIn Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <i class="fas fa-envelope"></i>
+            <p>Email</p>
+          </div>
+          <div class="flip-back">
+            <a href="mailto:malarkodi3.3@protosem.tech">Send Email</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <i class="fas fa-phone"></i>
+            <p>Phone</p>
+          </div>
+          <div class="flip-back">
+            <a href="tel:+919677487574">+91‑9677487574</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-front">
+            <i class="fab fa-instagram"></i>
+            <p>Instagram</p>
+          </div>
+          <div class="flip-back">
+            <a href="https://www.instagram.com/malarkodi520?igsh=c2c5YWtheTNlajlx" target="_blank">Follow Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Button -->
+    <div class="button-container">
+      <a href="index.html" class="back-home">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Optional JS (Bootstrap navbar toggling) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
